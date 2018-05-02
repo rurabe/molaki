@@ -10,7 +10,7 @@ import RootReducer from '../../reducers/root_reducer';
 
 import styles from './app.sass';
 
-const initialState = Immutable.Map();
+const initialState = Immutable.fromJS(Molaki.initialState);
 
 const store = createStore(combineReducers(RootReducer), initialState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

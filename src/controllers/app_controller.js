@@ -1,8 +1,11 @@
 'use strict';
+const RatesQueries = require('../queries/rates_queries');
 
 const AppController = {
   index: function(req,res){
-    res.render('index/index',{state: {user: req.user}});
+    RatesQueries.latest().then( rates => {
+      res.render('index/index',{state: {rates: rates, user: req.user}});
+    })
   }
 };
 

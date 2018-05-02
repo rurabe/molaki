@@ -86,9 +86,12 @@ class MortgagesCardForm extends React.PureComponent {
 
 }
 
+const rateKey = (term) => { return {'360': 'thirty_year_fixed', '180': 'fifteen_year_fixed'}[term.toString()]; }
+
 const mstp = (state,props) => {
+  const rk = rateKey(props.mortgage.term)
   return {
-    baselineRate: 4.0
+    baselineRate: state.getIn(['rates',rk])
   }
 }
 

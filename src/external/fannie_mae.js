@@ -24,8 +24,8 @@ const _getPeriodRates = (periods) => {
 const FannieMae = {
   getRates: function(){
     return Promise.props({
-      '15': _getPeriodRates(15),
-      '30': _getPeriodRates(30)
+      'fifteen_year_fixed': _getPeriodRates(15),
+      'thirty_year_fixed': _getPeriodRates(30)
     }).then(periods => {
       let obj = {};
       for(let period in periods){

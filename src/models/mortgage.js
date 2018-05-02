@@ -7,7 +7,7 @@ module.exports = class Mortgage extends Record({
   rate: undefined,
   points: undefined,
   purchase_price: undefined,
-  down_payment: undefined,
+  down_payment: 20,
   down_payment_unit: '%',
   fees: Map({}),
   credits: Map({}),

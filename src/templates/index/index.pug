@@ -6,5 +6,7 @@ html(lang="en")
     link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet")
 
   body
-    #app(data-state={state})
+    #app
+    script.
+      window.Molaki = {initialState: !{JSON.stringify(state)}};
     script(src="/app.js" type='text/javascript' )

@@ -69,7 +69,7 @@ const pv = (loan_term,payment,interest_rate) => {
 const calculatePayments = (m,baselineRate) => {
   const term = m.term;
   const downPaymentCash = calculateDownPaymentCash(m.down_payment,m.down_payment_unit,m.purchase_price);
-  const loanAmount = calculateLoanAmount(m.purchase_price,calculateDownPaymentCash());
+  const loanAmount = calculateLoanAmount(m.purchase_price,downPaymentCash);
   const pointsCash = calculatePointsCash(loanAmount,m.points);
   const totalFees = calculateTotalFees(m.fees,pointsCash);
   const totalCredits = calculateTotalCredits(m.credits);
