@@ -10,6 +10,6 @@ export default createSelector(
   getUnsavedMortgages,
   (mortgages,unsavedMortgages) => {
     console.log("reselect")
-    return mortgages.merge(unsavedMortgages).sortBy(m => m.score).toIndexedSeq();
+    return mortgages.merge(unsavedMortgages).sortBy(m => -1 * m.score).toIndexedSeq();
   }
 );

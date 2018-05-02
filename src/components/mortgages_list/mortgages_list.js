@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createMergeAction } from 'standard-reducer';
+import FlipMove from 'react-flip-move';
 
 import MortgagesSelector from '../../selectors/mortgages_selector';
 
@@ -20,9 +21,11 @@ class MortgagesList extends React.PureComponent {
         <button className="btn btn-primary btn-lg btn-block" onClick={this.newMortgage}>
           New Mortgage
         </button>
-        <ul className="mortgages-list">
-          {mortgages}
-        </ul>
+        <div className="mortgages-list">
+          <FlipMove duration={500} easing="ease-out">
+            {mortgages}
+          </FlipMove>
+        </div>
       </div>
     );
   }
