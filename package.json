@@ -4,7 +4,8 @@
   "description": "",
   "main": "entries/app.js",
   "engines": {
-    "node": "8.11.1"
+    "node": "8.11.1",
+    "yarn": "1.6.0"
   },
   "scripts": {
     "test": "jest",
@@ -13,7 +14,8 @@
     "migrate": "db-migrate up && yarn dump",
     "dump": "pg_dump -d molaki --schema-only -O -f schema.sql",
     "start:prod": "node server",
-    "postinstall": "yarn build"
+    "postinstall": "yarn build",
+    "task": "node src/tasks/run.js"
   },
   "author": "Ryan Urabe <rurabe@gmail.com>",
   "license": "ISC",
